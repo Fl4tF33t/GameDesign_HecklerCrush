@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
-  m_Name: Joke1
+  m_Name: Joke1 2
   m_EditorClassIdentifier: 
   name: Racist Joke
-  joke: A black man and a mexican are in a car, who is driving? The police
-  laughLevel: 3
+  joke: A jew with a boner walks into a wall, what hits first? His nose?
+  laughLevel: 2
   colorEffect: 1
