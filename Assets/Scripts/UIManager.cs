@@ -11,8 +11,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image[] buttonImage = new Image[3];
     [SerializeField] Button[] button = new Button[3];
     public Camera cam;
+    public float decayRate = 2.5f;
 
     public int laughLevel = 0;
+
+    private void Start()
+    {
+        laughLevel = 50;
+        InvokeRepeating("LaughDecay", 2, decayRate);
+    }
+
+    private void LaughDecay()
+    {
+        laughLevel--;
+    }
 
 
     void Update()
@@ -22,7 +34,6 @@ public class UIManager : MonoBehaviour
 
     public void Option1()
     {
-        laughLevel += 1;
         ColorChange(0);
         jokeDisplayInfo[0].isSelected = !jokeDisplayInfo[0].isSelected;
         button[1].interactable = !button[1].interactable;
@@ -31,18 +42,14 @@ public class UIManager : MonoBehaviour
 
     public void Option2()
     {
-        laughLevel += 1;
         ColorChange(1);
-
         jokeDisplayInfo[1].isSelected = !jokeDisplayInfo[1].isSelected;
         button[0].interactable = !button[0].interactable;
         button[2].interactable = !button[2].interactable;
     }
     public void Option3()
     {
-        laughLevel += 1;
         ColorChange(2);
-
         jokeDisplayInfo[2].isSelected = !jokeDisplayInfo[2].isSelected;
         button[0].interactable = !button[0].interactable;
         button[1].interactable = !button[1].interactable;
@@ -53,23 +60,20 @@ public class UIManager : MonoBehaviour
         if (jokeDisplayInfo[0].isSelected == true)
         {
             UIChanges(0);
-            jokeDisplayInfo[0].jokes.RemoveAt(jokeDisplayInfo[0].randomJokeIndex);
-            
         }
         else if (jokeDisplayInfo[1].isSelected == true)
         {
             UIChanges(1);
-            jokeDisplayInfo[1].jokes.RemoveAt(jokeDisplayInfo[1].randomJokeIndex);
         }
         else if (jokeDisplayInfo[2].isSelected == true)
         {
             UIChanges(2);
-            jokeDisplayInfo[2].jokes.RemoveAt(jokeDisplayInfo[2].randomJokeIndex);
         }
     }
 
     void UIChanges(int list)
     {
+        jokeDisplayInfo[list].jokes.RemoveAt(jokeDisplayInfo[list].randomJokeIndex);
         jokeDisplayInfo[list].JokeSelection();
         button[0].interactable = true;
         button[1].interactable = true;
