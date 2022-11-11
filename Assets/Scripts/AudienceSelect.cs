@@ -76,12 +76,14 @@ public class AudienceSelect : MonoBehaviour
         {
             print("you offended the same color");
             uiManagerInfo.laughLevel += 1;
+            uiManagerInfo.boomLevel += 1;
             leaveLevel--;
         }
         if (this.laughLevel == jokeDisplayInfo[list].jokes[jokeDisplayInfo[list].randomJokeIndex].laughLevel)
         {
             print("you offended the same shape");
             uiManagerInfo.laughLevel += 1;
+            uiManagerInfo.boomLevel += 1;
             leaveLevel--;
         }
     }

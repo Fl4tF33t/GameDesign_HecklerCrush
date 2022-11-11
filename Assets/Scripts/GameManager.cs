@@ -8,29 +8,42 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject[] audienceList;
 
-  
 
     // Start is called before the first frame update
     void Start()
     {
         audienceList = GameObject.FindGameObjectsWithTag("Audience");
-        InvokeRepeating("SpawnSystem", 1, 2);
+        for (int i = 0; i < audienceList.Length; i++)
+        {
+            audienceList[i].SetActive(false);
+        }
+        InvokeRepeating("SpawnSystem", 1, 1);
     }
 
    void SpawnSystem()
    {
-        List<int> numbers = new List<int>();
+        int randomAudience = Random.Range(0, audienceList.Length);
+        if (audienceList[randomAudience].activeSelf == false)
+        {
+            AudienceSelect spawn = audienceList[randomAudience].GetComponent<AudienceSelect>();
+            spawn.Start();
+            audienceList[randomAudience].SetActive(true);
+        }
+        /*int index = -1;
         for (int i = 0; i < audienceList.Length; i++)
         {
             if (audienceList[i].activeSelf == false)
             {
-                numbers.Add(i);
-                Debug.Log(numbers);
+                index++;
+                numbers[index] = i;
+                Debug.Log(numbers[0]);
                 AudienceSelect spawn = audienceList[i].GetComponent<AudienceSelect>();
                 spawn.Start();
                 audienceList[i].SetActive(true);
             }
-        }
+        }*/
+
+
    }
 
     

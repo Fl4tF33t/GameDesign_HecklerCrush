@@ -7,13 +7,18 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI laughOMeter;
+    [SerializeField] TextMeshProUGUI boomMeter;
     [SerializeField] JokeDisplay[] jokeDisplayInfo = new JokeDisplay[3];
     [SerializeField] Image[] buttonImage = new Image[3];
     [SerializeField] Button[] button = new Button[3];
+    [SerializeField] GameObject endBoom;
     public Camera cam;
     public float decayRate = 2.5f;
 
+    bool boomButtonPressed = false;
+
     public int laughLevel = 0;
+    public int boomLevel = 0;
 
     private void Start()
     {
@@ -29,7 +34,23 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        laughOMeter.text = "Laugh-O-Meter Level is: " + laughLevel;
+        if (boomButtonPressed == false)
+        {
+            laughOMeter.text = "Laugh-O-Meter Level is: " + laughLevel;
+        }else if (boomButtonPressed == true)
+        {
+            laughOMeter.text = "You're Hilarious, you win!";
+        }
+        if (laughLevel == 0)
+        {
+            CancelInvoke("LaughDecay");
+            laughOMeter.text = "You Suck as a comedian";
+        }
+        boomMeter.text = "Boom level is: " + boomLevel;
+        if(boomLevel >= 10)
+        {
+            endBoom.SetActive(true);
+        }
     }
 
     public void Option1()
@@ -55,6 +76,10 @@ public class UIManager : MonoBehaviour
         button[1].interactable = !button[1].interactable;
     }
 
+    public void BoomButton()
+    {
+        boomButtonPressed = true;
+    }
     public void AudienceChoose()
     {
         if (jokeDisplayInfo[0].isSelected == true)
