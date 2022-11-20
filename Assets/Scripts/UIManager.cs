@@ -11,7 +11,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] JokeDisplay[] jokeDisplayInfo = new JokeDisplay[3];
     [SerializeField] Image[] buttonImage = new Image[3];
     [SerializeField] Button[] button = new Button[3];
+    [SerializeField] GameObject nextLevel;
     [SerializeField] GameObject endBoom;
+    [SerializeField] GameManager gmInfo;
     public Camera cam;
     public float decayRate = 2.5f;
 
@@ -79,7 +81,27 @@ public class UIManager : MonoBehaviour
     public void BoomButton()
     {
         boomButtonPressed = true;
+        CancelInvoke("Laugh Decay");
+        gmInfo.CancelInvoke("SpawnSystem");
     }
+
+    public void BoomButtonInactive()
+    {
+        boomButtonPressed = false;
+        endBoom.SetActive(false);
+        nextLevel.SetActive(true);
+    }
+
+    public void StartNextLevel()
+    {
+        laughLevel = 50;
+        decayRate = 1;
+        InvokeRepeating("LaughDecay", 2, decayRate);
+        gmInfo.InvokeRepeating("Spawn System", 1, 1);
+
+        nextLevel.SetActive(false);
+    }
+
     public void AudienceChoose()
     {
         if (jokeDisplayInfo[0].isSelected == true)

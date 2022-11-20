@@ -29,24 +29,26 @@ public class GameManager : MonoBehaviour
             spawn.Start();
             audienceList[randomAudience].SetActive(true);
         }
-        /*int index = -1;
-        for (int i = 0; i < audienceList.Length; i++)
-        {
-            if (audienceList[i].activeSelf == false)
-            {
-                index++;
-                numbers[index] = i;
-                Debug.Log(numbers[0]);
-                AudienceSelect spawn = audienceList[i].GetComponent<AudienceSelect>();
-                spawn.Start();
-                audienceList[i].SetActive(true);
-            }
-        }*/
-
-
+        
    }
 
-    
+    public void LevelOver()
+    {
+        //int index = -1;
+        for (int i = 0; i < audienceList.Length; i++)
+        {
+            if (audienceList[i].activeSelf == true)
+            {
+                /*index++;
+                numbers[index] = i;
+                Debug.Log(numbers[0]);*/
+                AudienceSelect spawn = audienceList[i].GetComponent<AudienceSelect>();
+                //spawn.Start();
+                audienceList[i].SetActive(false);
+            }
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
