@@ -22,7 +22,7 @@ public class AudienceSelect : MonoBehaviour
     {
         colorEffect = Random.Range(1, 4);
         laughLevel = Random.Range(1, 4);
-        leaveLevel = 2;
+        leaveLevel = 3;
         button = GetComponent<Button>();
         image = GetComponent<Image>();
         
