@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class AudienceSelect : MonoBehaviour
 {
     [SerializeField] JokeDisplay[] jokeDisplayInfo = new JokeDisplay[3];
+    [SerializeField] Sprite[] spriteImage = new Sprite[3];
     Button button;
 
     public int colorEffect;
     public int laughLevel;
     public int leaveLevel;
+    
 
     Image image;
     [SerializeField] UIManager uiManagerInfo;
@@ -23,6 +25,7 @@ public class AudienceSelect : MonoBehaviour
         leaveLevel = 2;
         button = GetComponent<Button>();
         image = GetComponent<Image>();
+        
         if(colorEffect == 1)
         {
             image.color = Color.red;
@@ -33,6 +36,18 @@ public class AudienceSelect : MonoBehaviour
         else if (colorEffect == 3)
         {
             image.color = Color.green;
+        }
+
+        if(laughLevel == 1)
+        {
+            image.sprite = spriteImage[0];
+        }else if (laughLevel == 2)
+        {
+            image.sprite = spriteImage[1];
+        }
+        else if (laughLevel == 3)
+        {
+            image.sprite = spriteImage[2];
         }
     }
 
