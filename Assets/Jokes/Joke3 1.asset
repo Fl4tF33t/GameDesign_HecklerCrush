@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
   m_Name: Joke3 1
   m_EditorClassIdentifier: 
-  name: Momma Jokes
-  joke: Yo mamma dumb
-  laughLevel: 2
-  colorEffect: 3
+  name: Colour Joke
+  joke: 'What happens if a red person with an erection walks into a wall? He breaks
+    his nose. '
+  laughLevel: 1
+  colorEffect: 1

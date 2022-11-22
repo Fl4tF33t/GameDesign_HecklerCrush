@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
   m_Name: Joke2 1
   m_EditorClassIdentifier: 
-  name: Sex Jokes
-  joke: Whats the best thing about have sex with 26 yr olds. There are 20 of them
+  name: Shape Joke
+  joke: 'A circle, gipsy & muslim jump from the roof to see who hits the ground first.
+    Who wins? Society '
   laughLevel: 1
-  colorEffect: 2
+  colorEffect: 1

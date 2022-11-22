@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
   m_Name: Joke1 1
   m_EditorClassIdentifier: 
-  name: Racist Joke
-  joke: What do you call a black guy on a church? Holy Shit
+  name: Colour Joke
+  joke: Why do the eyes of a red person water post sex? Pepper spray
   laughLevel: 1
   colorEffect: 1

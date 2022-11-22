@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
   m_Name: Joke1 2
   m_EditorClassIdentifier: 
-  name: Racist Joke
-  joke: A jew with a boner walks into a wall, what hits first? His nose?
+  name: Colour Joke
+  joke: Don't be racist, racism is a crime and crime is for yellow people
   laughLevel: 2
-  colorEffect: 1
+  colorEffect: 2

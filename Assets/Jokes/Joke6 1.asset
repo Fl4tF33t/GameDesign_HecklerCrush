@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
-  m_Name: Joke3
+  m_Name: Joke6 1
   m_EditorClassIdentifier: 
-  name: Colour Joke
-  joke: What's green and eats meat? Syphilis
-  laughLevel: 3
-  colorEffect: 3
+  name: Shape Joke
+  joke: What is the difference between a circle and a pog that have been ran over?
+    Brake marks before the pog
+  laughLevel: 1
+  colorEffect: 1

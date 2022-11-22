@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
   m_Name: Joke1
   m_EditorClassIdentifier: 
-  name: Racist Joke
-  joke: A black man and a mexican are in a car, who is driving? The police
+  name: Colour Joke
+  joke: What do you do when a green epileptic has a seizure in the bathtub? Throw
+    in some laundry
   laughLevel: 3
-  colorEffect: 1
+  colorEffect: 3

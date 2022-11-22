@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f8bf636a9f674baac657bd633faa6, type: 3}
   m_Name: Joke2 2
   m_EditorClassIdentifier: 
-  name: Sex Jokes
-  joke: 9 out of 10 people approve of a rape gangbang
+  name: Shape Joke
+  joke: What is the difference between acne and a square priest? Acne usually comes
+    on a boy's face after he turns 12
   laughLevel: 2
   colorEffect: 2
