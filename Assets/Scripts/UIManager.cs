@@ -14,8 +14,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject nextLevel;
     [SerializeField] GameObject endBoom;
     [SerializeField] GameManager gmInfo;
+    [SerializeField] Slider sliderInfo;
+    Image sliderInfoImage;
     public Camera cam;
     public float decayRate = 2.5f;
+
 
     bool boomButtonPressed = false;
 
@@ -26,6 +29,7 @@ public class UIManager : MonoBehaviour
     {
         laughLevel = 50;
         InvokeRepeating("LaughDecay", 2, decayRate);
+        sliderInfoImage = sliderInfo.fillRect.GetComponent<Image>();
     }
 
     private void LaughDecay()
@@ -39,7 +43,8 @@ public class UIManager : MonoBehaviour
         if (boomButtonPressed == false)
         {
             laughOMeter.text = "Laugh-O-Meter Level is: " + laughLevel;
-        }else if (boomButtonPressed == true)
+        }
+        else if (boomButtonPressed == true)
         {
             laughOMeter.text = "You're Hilarious, you win!";
         }
@@ -49,13 +54,29 @@ public class UIManager : MonoBehaviour
             laughOMeter.text = "You Suck as a comedian";
         }
         boomMeter.text = "Boom level is: " + boomLevel;
-        if(boomLevel >= 10)
+        if (boomLevel >= 10)
         {
             endBoom.SetActive(true);
         }
-    }
 
-    public void Option1()
+        sliderInfo.value = laughLevel;
+        if (laughLevel >= 50)
+        {
+            sliderInfoImage.color = Color.green;
+        }
+        else if (laughLevel < 50 && laughLevel > 20)
+        {
+            sliderInfoImage.color = Color.yellow;
+
+        }
+        else if (laughLevel <= 20)
+        {
+            sliderInfoImage.color = Color.red;
+
+        }
+
+    }
+        public void Option1()
     {
         ColorChange(0);
         jokeDisplayInfo[0].isSelected = !jokeDisplayInfo[0].isSelected;
